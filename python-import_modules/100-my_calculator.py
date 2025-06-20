@@ -11,13 +11,8 @@ if __name__ == "__main__":
     operator = sys.argv[2]
     b = sys.argv[3]
 
-    try:
-        a = int(a)
-        b = int(b)
-    except ValueError:
-        # If a or b can't be converted to int, the problem doesn't specify error handling,
-        # but since it says "you can assume", we can skip handling here.
-        pass
+    a = int(a)
+    b = int(b)
 
     if operator == '+':
         result = add(a, b)
@@ -31,5 +26,4 @@ if __name__ == "__main__":
         print("Unknown operator. Available operators: +, -, * and /")
         sys.exit(1)
 
-    print("{} {} {} = {}".format(a, operator, b, result))
-
+    print(f"{a} {operator} {b} = {result}")
