@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-def magic_string(list_=[]):
-        list_ += ["BestSchool"]
-            return ", ".join(list_)
+"""Defines a LockedClass that restricts attribute assignment."""
 
+class LockedClass:
+    """A class that only allows setting 'first_name' attribute."""
+    __slots__ = ['first_name']
