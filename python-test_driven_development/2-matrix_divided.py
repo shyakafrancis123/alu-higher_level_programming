@@ -22,11 +22,11 @@ def matrix_divided(matrix, div):
         ZeroDivisionError: If div is zero.
     """
     if (not isinstance(matrix, list) or
-        not all(isinstance(row, list) for row in matrix)):
-        raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
+            not all(isinstance(row, list) for row in matrix)):
+        raise TypeError("atrix must be a matrix (list of lists) of integers/floats")
 
     if not all(isinstance(x, (int, float)) for row in matrix for x in row):
-        raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
+        raise TypeError("atrix must be a matrix (list of lists) of integers/floats")
 
     row_lengths = list(map(len, matrix))
     if len(set(row_lengths)) != 1:
@@ -39,4 +39,3 @@ def matrix_divided(matrix, div):
         raise ZeroDivisionError("division by zero")
 
     return [[round(x / div, 2) for x in row] for row in matrix]
-
