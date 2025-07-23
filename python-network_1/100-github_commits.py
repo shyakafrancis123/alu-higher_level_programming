@@ -1,5 +1,17 @@
 #!/usr/bin/python3
-""" Lists 10 most recent commits from a GitHub repo using GitHub API """
+"""
+This script uses the GitHub API to list the 10 most recent commits
+of a given repository by a specified owner.
+
+Usage:
+    ./100-github_commits.py <repository name> <owner name>
+
+Example:
+    ./100-github_commits.py rails rails
+
+Output format:
+    <sha>: <author name>
+"""
 
 import sys
 import requests
@@ -17,6 +29,6 @@ if __name__ == "__main__":
             sha = commit.get("sha")
             author = commit.get("commit", {}).get("author", {}).get("name")
             print(f"{sha}: {author}")
-    except Exception as e:
+    except Exception:
         pass
 
